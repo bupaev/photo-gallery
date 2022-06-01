@@ -6,27 +6,26 @@ class EsClassComponent extends React.Component {
     this.state = {
       count: 0,
     }
-    this.increase = this.increase.bind(this);
-    this.decrease = this.decrease.bind(this);
+    this.handleIncrease = this.handleIncrease.bind(this);
+    this.handleDecrease = this.handleDecrease.bind(this);
   }
 
-  increase() {
+  handleIncrease() {
     this.setState(previousValue => ({
       count: previousValue.count + 1,
     }));
   }
 
-  decrease() {
+  handleDecrease() {
     this.setState(previousValue => ({
       count: previousValue.count - 1,
     }));
   }
 
-  reset() {
+  handleReset() {
     this.setState(()=> ({
       count: 0,
-    }));
-  }
+    }));  }
 
   render() {
     return (
@@ -34,9 +33,9 @@ class EsClassComponent extends React.Component {
         <h2>I'm ES6 Class Component</h2>
         <span>{this.state.count}</span>
         <div>
-          <button onClick={this.increase}>+</button>
-          <button onClick={this.decrease}>-</button>
-          <button onClick={this.reset}>Reset</button>
+          <button onClick={this.handleIncrease}>+</button>
+          <button onClick={this.handleDecrease}>-</button>
+          <button onClick={this.handleReset}>Reset</button>
         </div>
       </div>
     )

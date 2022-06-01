@@ -3,18 +3,15 @@ import { useState } from 'react'
 const FunctionalComponent = () => {
   const [count, setCount] = useState(0);
 
-  //increase counter
-  const increase = () => {
+  const handleIncrease = () => {
     setCount(count => count + 1);
   };
 
-  //decrease counter
-  const decrease = () => {
+  const handleDecrease = () => {
     setCount(count => count - 1);
   };
 
-  //reset counter
-  const reset = () =>{
+  const handleReset = () =>{
     setCount(0)
   }
 
@@ -23,9 +20,9 @@ const FunctionalComponent = () => {
       <h2>I'm Functional Component</h2>
       <span>{count}</span>
       <div>
-        <button onClick={increase}>+</button>
-        <button onClick={decrease}>-</button>
-        <button onClick={reset}>Reset</button>
+        <button onClick={handleIncrease}>+</button>
+        <button onClick={handleDecrease}>-</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   )
